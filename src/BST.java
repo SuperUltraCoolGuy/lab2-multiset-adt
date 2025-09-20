@@ -80,9 +80,15 @@ public class BST {
             left = null;
             right = null;
         } else if (left.isEmpty()) {
-            // TODO: Figure out which order to do the updates in
+            root = right.root;
+            left = right.left;
+            right = right.right;
+
         } else if  (right.isEmpty()) {
-            // TODO: Figure out which order to do the updates in
+            root = left.root;
+            right = left.right;
+            left = left.left;
+
         } else {
             root = left.extractMax();
         }
